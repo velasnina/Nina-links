@@ -1,1 +1,592 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#EAE2D5">
+
+  <title>NINA | Velas Artesanais</title>
+
+  <meta name="description"
+        content="Conheça os links oficiais da Nina Velas Artesanais.">
+
+  <!-- FONTE DOS TEXTOS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&display=swap"
+        rel="stylesheet">
+
+  <style>
+    /* =====================================
+       1. CORES PRINCIPAIS
+       ===================================== */
+
+    :root {
+      --vanilla: #EAE2D5;
+      --branco: #FFFFFF;
+      --preto: #080808;
+      --dourado: #927B63;
+    }
+
+    /* Remove margens automáticas do navegador */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--vanilla);
+      color: var(--preto);
+      font-family: "Bodoni Moda", Georgia, serif;
+    }
+
+    /* =====================================
+       2. ÁREA PRINCIPAL DA PÁGINA
+       ===================================== */
+
+    .pagina {
+      width: 100%;
+      min-height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 12.8vh 0 70px;
+    }
+
+    /* =====================================
+       3. BOTÃO DE COMPARTILHAR
+       ===================================== */
+
+    .compartilhar {
+      position: absolute;
+      top: 30px;
+      right: 24px;
+
+      width: 92px;
+      height: 92px;
+
+      border: none;
+      border-radius: 50%;
+
+      background: var(--branco);
+      color: var(--preto);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+    }
+
+    .compartilhar svg {
+      width: 42px;
+      height: 42px;
+    }
+
+    .compartilhar:hover {
+      opacity: 0.85;
+    }
+
+    .compartilhar:focus-visible,
+    .link:focus-visible {
+      outline: 2px solid var(--dourado);
+      outline-offset: 4px;
+    }
+
+    /* =====================================
+       4. CÍRCULO BRANCO DO LOGO
+       ===================================== */
+
+    .logo {
+      width: 380px;
+      height: 380px;
+
+      background: var(--branco);
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+      flex-shrink: 0;
+
+      margin-bottom: 7.3vh;
+    }
+
+    .logo img {
+      width: 180%;
+      height: 180%;
+
+      max-width: none;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    /* =====================================
+       5. GRUPO DOS QUATRO BOTÕES
+       ===================================== */
+
+    .links {
+      width: 80.5%;
+      max-width: 724px;
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 32px;
+    }
+
+    /* Aparência de cada botão */
+
+    .link {
+      width: 100%;
+      height: 145px;
+
+      display: grid;
+      grid-template-columns: 100px minmax(0, 1fr) 100px;
+      align-items: center;
+
+      padding: 12px 22px;
+
+      background: var(--branco);
+      color: var(--preto);
+
+      border-radius: 999px;
+      text-decoration: none;
+    }
+
+    /* Tamanho dos ícones */
+
+    .icone {
+      width: 70px;
+      height: 70px;
+
+      justify-self: center;
+    }
+
+    /* Textos dentro dos botões */
+
+    .texto-link {
+      text-align: center;
+      white-space: nowrap;
+
+      font-size: 46px;
+      font-weight: 400;
+      line-height: 1.12;
+    }
+
+    /* Sacola da Shopee */
+
+    .sacola {
+      width: 70px;
+      height: 74px;
+
+      justify-self: center;
+    }
+
+    /* Mensagens do botão de compartilhar */
+
+    .aviso {
+      margin: 18px 20px 0;
+      min-height: 18px;
+
+      text-align: center;
+      color: #51483E;
+
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    /* =====================================
+       6. ADAPTAÇÃO PARA CELULARES
+       ===================================== */
+
+    @media (max-width: 600px) {
+
+      .pagina {
+        padding-top: 12.8vh;
+        padding-bottom: 45px;
+      }
+
+      .compartilhar {
+        width: 58px;
+        height: 58px;
+
+        top: 20px;
+        right: 20px;
+      }
+
+      .compartilhar svg {
+        width: 29px;
+        height: 29px;
+      }
+
+      .logo {
+        width: 66vw;
+        height: 66vw;
+
+        max-width: 380px;
+        max-height: 380px;
+
+        margin-bottom: 7.3vh;
+      }
+
+      .links {
+        width: 80.5%;
+        gap: 18px;
+      }
+
+      .link {
+        height: 9.05vh;
+        min-height: 78px;
+
+        grid-template-columns: 45px minmax(0, 1fr) 45px;
+
+        padding: 10px 13px;
+      }
+
+      .icone {
+        width: 38px;
+        height: 38px;
+      }
+
+      .sacola {
+        width: 37px;
+        height: 41px;
+      }
+
+      .texto-link {
+        font-size: clamp(19px, 5.2vw, 30px);
+      }
+    }
+
+    /* Ajustes para telas muito estreitas */
+
+    @media (max-width: 360px) {
+
+      .links {
+        width: 88%;
+      }
+
+      .link {
+        grid-template-columns: 36px minmax(0, 1fr) 36px;
+        padding: 8px;
+      }
+
+      .icone {
+        width: 32px;
+        height: 32px;
+      }
+
+      .sacola {
+        width: 32px;
+        height: 36px;
+      }
+
+      .texto-link {
+        font-size: 18px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================================
+       7. BOTÃO DE COMPARTILHAR
+       =================================== -->
+
+  <button
+    class="compartilhar"
+    id="compartilhar"
+    type="button"
+    aria-label="Compartilhar página"
+    title="Compartilhar página">
+
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true">
+
+      <path d="M12 15V3"></path>
+      <path d="m7 8 5-5 5 5"></path>
+
+      <path d="M5 11H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-1"></path>
+
+    </svg>
+
+  </button>
+
+
+  <main class="pagina">
+
+    <!-- =================================
+         8. LOGO ORIGINAL DA NINA
+         ================================= -->
+
+    <header class="logo">
+
+      <img
+        src="LOGO.jpeg"
+        alt="NINA — Velas Artesanais">
+
+    </header>
+
+
+    <!-- =================================
+         9. BOTÕES DE LINKS
+         ================================= -->
+
+    <nav class="links" aria-label="Links oficiais">
+
+
+      <!-- BOTÃO 1: NOSSO SITE -->
+
+      <a class="link" href="#site-em-breve" id="linkSite">
+
+        <!-- Ícone de globo -->
+
+        <svg class="icone"
+             viewBox="0 0 48 48"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2.8"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             aria-hidden="true">
+
+          <circle cx="24" cy="24" r="20"></circle>
+
+          <path d="M4 24h40"></path>
+
+          <path d="M24 4c6 6 9 13 9 20s-3 14-9 20c-6-6-9-13-9-20S18 10 24 4Z"></path>
+
+          <path d="M8 13h32M8 35h32"></path>
+
+        </svg>
+
+        <span class="texto-link">Nosso site</span>
+
+        <span aria-hidden="true"></span>
+
+      </a>
+
+
+      <!-- BOTÃO 2: INSTAGRAM -->
+
+      <a class="link"
+         href="https://instagram.com/velas_nina"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        <!-- Ícone do Instagram -->
+
+        <svg class="icone"
+             viewBox="0 0 48 48"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="3.5"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             aria-hidden="true">
+
+          <rect x="5" y="5" width="38" height="38" rx="10"></rect>
+
+          <circle cx="24" cy="24" r="9"></circle>
+
+          <circle cx="35.5" cy="12.8" r="1.5"
+                  fill="currentColor"
+                  stroke="none"></circle>
+
+        </svg>
+
+        <span class="texto-link">Instagram</span>
+
+        <span aria-hidden="true"></span>
+
+      </a>
+
+
+      <!-- BOTÃO 3: E-MAIL -->
+
+      <a class="link"
+         href="mailto:velasniina@gmail.com">
+
+        <!-- Ícone de envelope -->
+
+        <svg class="icone"
+             viewBox="0 0 48 48"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2.8"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             aria-hidden="true">
+
+          <rect x="4" y="8" width="40" height="32" rx="3"></rect>
+
+          <path d="m5 11 19 16L43 11"></path>
+
+        </svg>
+
+        <span class="texto-link">E-mail</span>
+
+        <span aria-hidden="true"></span>
+
+      </a>
+
+
+      <!-- BOTÃO 4: SHOPEE -->
+
+      <a class="link"
+         href="https://br.shp.ee/zG9P2De4"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        <!-- Ícone de sacola -->
+
+        <svg class="sacola"
+             viewBox="0 0 44 48"
+             aria-hidden="true">
+
+          <path d="M9 15h26l4 29H5l4-29Z"
+                fill="#080808"></path>
+
+          <path d="M14 16v-4a8 8 0 0 1 16 0v4"
+                fill="none"
+                stroke="#080808"
+                stroke-width="4"
+                stroke-linecap="round"></path>
+
+          <text x="22"
+                y="37"
+                text-anchor="middle"
+                font-family="Arial, sans-serif"
+                font-size="24"
+                font-weight="700"
+                fill="#FFFFFF">S</text>
+
+        </svg>
+
+        <span class="texto-link">Compre na Shopee</span>
+
+        <span aria-hidden="true"></span>
+
+      </a>
+
+    </nav>
+
+
+    <!-- Mensagem de retorno para quem compartilha -->
+
+    <p class="aviso"
+       id="aviso"
+       role="status"
+       aria-live="polite"></p>
+
+  </main>
+
+
+  <!-- ===================================
+       10. FUNCIONAMENTO DOS BOTÕES
+       =================================== -->
+
+  <script>
+
+    // Localiza o botão e a área de mensagens.
+
+    const botaoCompartilhar =
+      document.getElementById("compartilhar");
+
+    const aviso =
+      document.getElementById("aviso");
+
+
+    // Abre o menu de compartilhamento do dispositivo.
+
+    botaoCompartilhar.addEventListener("click", async () => {
+
+      const dados = {
+        title: "NINA | Velas Artesanais",
+        text: "Conheça os links oficiais da Nina Velas Artesanais.",
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+
+        try {
+
+          await navigator.share(dados);
+
+        } catch (erro) {
+
+          // Se a pessoa cancelar o menu, não é um erro.
+          if (erro.name !== "AbortError") {
+            await copiarLink();
+          }
+
+        }
+
+      } else {
+
+        // Alternativa para navegadores sem compartilhamento nativo.
+        await copiarLink();
+
+      }
+
+    });
+
+
+    // Copia o endereço da página.
+
+    async function copiarLink() {
+
+      try {
+
+        await navigator.clipboard.writeText(window.location.href);
+
+        aviso.textContent = "Link da página copiado!";
+
+      } catch (erro) {
+
+        aviso.textContent =
+          "Copie o endereço pela barra do navegador.";
+
+      }
+
+    }
+
+
+    // Nosso site oficial será adicionado no futuro.
+
+    document.getElementById("linkSite")
+      .addEventListener("click", (evento) => {
+
+        evento.preventDefault();
+
+        aviso.textContent =
+          "Nosso site oficial está chegando. Em breve!";
+
+      });
+
+  </script>
+
+</body>
+</html>
+
