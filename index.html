@@ -6,130 +6,366 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>NINA | Velas Artesanais</title>
-
   <meta
     name="description"
-    content="Conheça a NINA Velas Artesanais. Acesse nosso Instagram, loja e contato."
+    content="Conheça a NINA Velas Artesanais e acesse nossas redes sociais e produtos."
+  >
+  <meta name="theme-color" content="#EAE2D5">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&display=swap"
+    rel="stylesheet"
   >
 
   <style>
+    :root {
+      --fundo: #EAE2D5;
+      --branco: #FFFFFF;
+      --preto: #111111;
+      --dourado: #B49A72;
+      --fonte: "Bodoni Moda", Georgia, serif;
+    }
+
     * {
       box-sizing: border-box;
     }
 
+    html {
+      min-height: 100%;
+      background: var(--fundo);
+    }
+
     body {
-      margin: 0;
       min-height: 100vh;
-      padding: 40px 20px;
-      background: #EAE2D5;
-      color: #333;
-      font-family: Arial, Helvetica, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      margin: 0;
+      padding: 48px 24px 36px;
+      background: var(--fundo);
+      color: var(--preto);
+      font-family: var(--fonte);
     }
 
-    .container {
+    /* Área principal: mantém tudo centralizado */
+    .pagina {
       width: 100%;
-      max-width: 460px;
-      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .logo-area {
-      width: 250px;
-      height: 250px;
-      margin: 0 auto 25px;
+    /* Botão de compartilhar */
+    .compartilhar {
+      position: fixed;
+      top: 22px;
+      right: 24px;
+      z-index: 10;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
+      width: 48px;
+      height: 48px;
+      padding: 0;
+
+      border: none;
+      border-radius: 50%;
+      background: var(--branco);
+      color: var(--preto);
+      cursor: pointer;
+
+      transition: transform 0.2s ease;
     }
 
-.logo-area img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transform: scale(1);
-  clip-path: none;
-}
-    h1 {
-      margin: 0 0 8px;
-      font-size: 25px;
-      letter-spacing: 3px;
-      font-weight: 500;
+    .compartilhar:hover {
+      transform: scale(1.05);
     }
 
-    .subtitle {
-      margin: 0 0 30px;
-      font-size: 14px;
-      letter-spacing: 2px;
+    .compartilhar svg {
+      width: 23px;
+      height: 23px;
     }
 
+    /* Logo */
+    .logo-area {
+      width: 172px;
+      height: 172px;
+      margin: 8px auto 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+      border-radius: 50%;
+      background: var(--branco);
+    }
+
+    .logo-area img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Botões dos links */
     .links {
+      width: 100%;
       display: flex;
       flex-direction: column;
       gap: 14px;
     }
 
     .link {
-      display: block;
       width: 100%;
-      padding: 16px 20px;
-      border: 1px solid #8B775E;
-      border-radius: 40px;
-      background: #F8F5EF;
-      color: #44382D;
+      min-height: 66px;
+      padding: 12px 24px;
+
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr) 34px;
+      align-items: center;
+      column-gap: 12px;
+
+      border: 1px solid rgba(0, 0, 0, 0.025);
+      border-radius: 999px;
+      background: var(--branco);
+      color: var(--preto);
       text-decoration: none;
-      font-size: 15px;
-      transition: background 0.2s, transform 0.2s;
+      text-align: center;
+
+      font-family: var(--fonte);
+      font-size: 23px;
+      font-weight: 400;
+      line-height: 1.25;
+
+      box-shadow: 0 2px 7px rgba(65, 48, 30, 0.025);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .link:hover {
-      background: #DED0BC;
       transform: translateY(-2px);
+      box-shadow: 0 5px 14px rgba(65, 48, 30, 0.07);
     }
 
-    .footer {
-      margin-top: 30px;
-      font-size: 12px;
-      letter-spacing: 1px;
-      color: #6B5C4D;
+    .link:focus-visible,
+    .compartilhar:focus-visible {
+      outline: 2px solid var(--dourado);
+      outline-offset: 4px;
     }
 
-    @media (max-width: 480px) {
+    .icone {
+      width: 30px;
+      height: 30px;
+      display: block;
+      justify-self: center;
+      stroke: currentColor;
+    }
+
+    .texto-link {
+      grid-column: 2;
+    }
+
+    /* Mensagem para o site que ainda será lançado */
+    .aviso {
+      display: none;
+      width: 100%;
+      margin-top: 18px;
+      padding: 15px 18px;
+
+      border: 1px solid rgba(180, 154, 114, 0.45);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.6);
+
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .aviso.visivel {
+      display: block;
+    }
+
+    .rodape {
+      margin-top: 28px;
+      color: #786D5F;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
+    /* Computadores e telas maiores */
+    @media (min-width: 768px) {
       body {
-        padding: 30px 22px;
+        padding-top: 52px;
+        padding-bottom: 40px;
+      }
+
+      .pagina {
+        max-width: 440px;
       }
 
       .logo-area {
-        width: 220px;
-        height: 220px;
+        width: 158px;
+        height: 158px;
+        margin-top: 4px;
+        margin-bottom: 28px;
       }
 
-      h1 {
-        font-size: 23px;
+      .links {
+        gap: 13px;
+      }
+
+      .link {
+        min-height: 62px;
+        padding: 10px 22px;
+        font-size: 21px;
+      }
+
+      .icone {
+        width: 27px;
+        height: 27px;
+      }
+
+      .compartilhar {
+        top: 20px;
+        right: 22px;
+        width: 44px;
+        height: 44px;
+      }
+    }
+
+    /* Celulares */
+    @media (max-width: 480px) {
+      body {
+        padding: 76px 20px 28px;
+      }
+
+      .pagina {
+        max-width: 390px;
+      }
+
+      .logo-area {
+        width: 158px;
+        height: 158px;
+        margin-bottom: 28px;
+      }
+
+      .links {
+        gap: 12px;
+      }
+
+      .link {
+        min-height: 60px;
+        padding: 10px 17px;
+        grid-template-columns: 29px minmax(0, 1fr) 29px;
+        column-gap: 8px;
+        font-size: 19px;
+      }
+
+      .icone {
+        width: 25px;
+        height: 25px;
+      }
+
+      .compartilhar {
+        top: 16px;
+        right: 16px;
+        width: 42px;
+        height: 42px;
+      }
+
+      .rodape {
+        margin-top: 24px;
+      }
+    }
+
+    @media (max-width: 340px) {
+      body {
+        padding-right: 14px;
+        padding-left: 14px;
+      }
+
+      .link {
+        padding-right: 12px;
+        padding-left: 12px;
+        font-size: 17px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
+  <button
+    class="compartilhar"
+    id="botaoCompartilhar"
+    type="button"
+    aria-label="Compartilhar página"
+    title="Compartilhar página"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="18" cy="5" r="3"></circle>
+      <circle cx="6" cy="12" r="3"></circle>
+      <circle cx="18" cy="19" r="3"></circle>
+      <path d="m8.7 10.7 6.6-4.4"></path>
+      <path d="m8.7 13.3 6.6 4.4"></path>
+    </svg>
+  </button>
 
+  <main class="pagina">
     <div class="logo-area">
       <img
         src="LOGO.jpeg"
         alt="NINA Velas Artesanais"
+        width="172"
+        height="172"
       >
     </div>
 
-    <h1>NINA</h1>
-    <p class="subtitle">VELAS ARTESANAIS</p>
-
-    <nav class="links" aria-label="Links oficiais da NINA">
+    <nav class="links" aria-label="Links da NINA">
 
       <a class="link" href="#" id="linkSite">
-        Nosso site
+        <svg
+          class="icone"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M2 12h20"></path>
+          <path d="M12 2a15 15 0 0 1 0 20"></path>
+          <path d="M12 2a15 15 0 0 0 0 20"></path>
+          <path d="M4.9 5.5h14.2"></path>
+          <path d="M4.9 18.5h14.2"></path>
+        </svg>
+        <span class="texto-link">Nosso site</span>
+        <span aria-hidden="true"></span>
       </a>
 
       <a
@@ -138,11 +374,41 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        Instagram
+        <svg
+          class="icone"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+          <circle cx="12" cy="12" r="4"></circle>
+          <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle>
+        </svg>
+        <span class="texto-link">Instagram</span>
+        <span aria-hidden="true"></span>
       </a>
 
-      <a class="link" href="mailto:velasniina@gmail.com">
-        Entre em contato por e-mail
+      <a
+        class="link"
+        href="mailto:velasniina@gmail.com"
+      >
+        <svg
+          class="icone"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <rect x="2.5" y="4.5" width="19" height="15" rx="2"></rect>
+          <path d="m3.5 6 8.5 7 8.5-7"></path>
+        </svg>
+        <span class="texto-link">E-mail</span>
+        <span aria-hidden="true"></span>
       </a>
 
       <a
@@ -151,50 +417,71 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        Nossa loja na Shopee
+        <svg
+          class="icone"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M5 8h14l1 13H4L5 8Z"></path>
+          <path d="M9 9V6a3 3 0 0 1 6 0v3"></path>
+        </svg>
+        <span class="texto-link">Compre na Shopee</span>
+        <span aria-hidden="true"></span>
       </a>
-
-      <button class="link" type="button" id="shareButton">
-        Compartilhar página
-      </button>
 
     </nav>
 
-    <p class="footer">
-      Feito com carinho · NINA Velas Artesanais
-    </p>
+    <div class="aviso" id="avisoSite" role="status" aria-live="polite">
+      Nosso site oficial está chegando. Em breve!
+    </div>
 
+    <footer class="rodape">
+      NINA · VELAS ARTESANAIS
+    </footer>
   </main>
 
   <script>
-    document.getElementById("linkSite").addEventListener("click", function(event) {
-      event.preventDefault();
+    const linkSite = document.getElementById("linkSite");
+    const avisoSite = document.getElementById("avisoSite");
+    const botaoCompartilhar = document.getElementById("botaoCompartilhar");
 
-      alert("Nosso site oficial está chegando. Em breve!");
+    linkSite.addEventListener("click", function (evento) {
+      evento.preventDefault();
+      avisoSite.classList.add("visivel");
     });
 
-    document.getElementById("shareButton").addEventListener("click", async function() {
+    botaoCompartilhar.addEventListener("click", async function () {
       const dados = {
         title: "NINA | Velas Artesanais",
         text: "Conheça a NINA Velas Artesanais!",
         url: window.location.href
       };
 
-      try {
-        if (navigator.share) {
+      if (navigator.share) {
+        try {
           await navigator.share(dados);
-        } else if (navigator.clipboard) {
-          await navigator.clipboard.writeText(dados.url);
-          alert("Link da página copiado!");
-        } else {
-          prompt("Copie o link da página:", dados.url);
+        } catch (erro) {
+          if (erro.name !== "AbortError") {
+            copiarLink();
+          }
         }
-      } catch (erro) {
-        if (erro.name !== "AbortError") {
-          alert("Você pode copiar o endereço da página para compartilhar.");
-        }
+      } else {
+        copiarLink();
       }
     });
+
+    async function copiarLink() {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        alert("Link da página copiado para compartilhar!");
+      } catch (erro) {
+        window.prompt("Copie o link da sua página:", window.location.href);
+      }
+    }
   </script>
 </body>
 </html>
