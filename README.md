@@ -1,15 +1,14 @@
-# NINA | Links 🕯️
+# NINA | Links 
 
 Página de links criada para a marca **NINA Velas Artesanais**, com uma identidade visual minimalista, elegante e delicada.
 
 O projeto reúne os principais canais de contato e compra da marca em uma única página, facilitando o acesso dos clientes às redes sociais, ao e-mail e à loja na Shopee.
 
-## ✨ Demonstração
 
 🔗 **Acesse a página publicada:**  
-https://velasnlina.github.io/Nina-links/
+https://velasnina.github.io/Nina-links/
 
-## 🎨 Sobre o projeto
+##  Sobre o projeto
 
 A proposta foi desenvolver uma página de links com uma estética alinhada à identidade visual da NINA Velas Artesanais, utilizando tons neutros, elementos minimalistas e tipografia elegante.
 
@@ -47,9 +46,6 @@ Este projeto foi uma oportunidade de praticar a criação de páginas web, a org
 
 Também permitiu explorar como a tecnologia pode ajudar uma marca a organizar sua presença digital.
 
-## 👩‍💻 Projeto
 
 Desenvolvido para a marca **NINA Velas Artesanais**.
 
-🔗 [Ver página publicada](https://velasnlina.github.io/Nina-links/)  
-🔗 [Acessar repositório no GitHub](https://github.com/velasnlina/Nina-links)
